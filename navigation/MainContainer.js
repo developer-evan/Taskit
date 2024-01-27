@@ -1,34 +1,27 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-
+import { StyleSheet } from 'react-native';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons'; // npm install react-native-vector-icons --save
-
-//screens
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './screens/HomeScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import DetailScreen from './screens/DetailScreen';
-import { options } from 'cli';
+import ProfileScreen from './screens/ProfileScreen';
 
-//screen names
 const homeName = 'Home';
 const settingsName = 'Settings';
-const detailName = 'Detail';
+const detailName = 'Tasks';
+const profileName = 'Profile';
+
 
 const Tab = createBottomTabNavigator();
-
-
-
 
 const MainContainer = () => {
     return (
         <NavigationContainer>
             <Tab.Navigator
-            // initialRouteName={homeName}
                 screenOptions={({ route }) => ({
-                    tabBarIcon: ({ focused, color, size }) => {   
+                    tabBarIcon: ({ focused, color, size }) => {
                         let iconName;
                         if (route.name === homeName) {
                             iconName = focused ? 'home' : 'home-outline';
@@ -37,8 +30,11 @@ const MainContainer = () => {
                         } else if (route.name === detailName) {
                             iconName = focused ? 'list' : 'list-outline';
                         }
+                        else if (route.name === profileName) {
+                            iconName = focused ? 'person' : 'person-outline';
+                        }
                         return <Ionicons name={iconName} size={size} color={color} />;
-                    }
+                    },
                 })}
                 tabBarOptions={{
                     activeTintColor: 'tomato',
@@ -46,7 +42,7 @@ const MainContainer = () => {
                     labelStyle: {
                         fontSize: 10,
                         // fontWeight: 'bold',
-                        paddingBotton: 10,
+                        paddingBottom: 10, // Corrected typo
                     },
                     style: {
                         // backgroundColor: 'white',
@@ -57,19 +53,17 @@ const MainContainer = () => {
                         padding: 10,
                         height: 70,
                     },
-
-
-
                 }}
             >
-                <Tab.Screen name={homeName} component={HomeScreen} />                
+                <Tab.Screen name={homeName} component={HomeScreen} />
                 <Tab.Screen name={detailName} component={DetailScreen} />
                 <Tab.Screen name={settingsName} component={SettingsScreen} />
+                <Tab.Screen name={profileName} component={ProfileScreen} />
             </Tab.Navigator>
         </NavigationContainer>
-    )
-}
+    );
+};
 
-export default MainContainer
+export default MainContainer;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
