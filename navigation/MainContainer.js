@@ -37,6 +37,7 @@ const MainContainer = () => {
                     },
                 })}
                 tabBarOptions={{
+                    // screenOptions={{
                     activeTintColor: 'tomato',
                     inactiveTintColor: 'grey',
                     labelStyle: {
@@ -55,10 +56,28 @@ const MainContainer = () => {
                     },
                 }}
             >
-                <Tab.Screen name={homeName} component={HomeScreen} />
-                <Tab.Screen name={detailName} component={DetailScreen} />
-                <Tab.Screen name={settingsName} component={SettingsScreen} />
-                <Tab.Screen name={profileName} component={ProfileScreen} />
+                <Tab.Screen name={homeName} component={HomeScreen}
+                    options={{
+                        headerShown: false,
+                    }
+                    }
+                />
+                <Tab.Screen name={detailName} component={DetailScreen}
+                    options={{
+                        headerShown: false,
+                    }
+                    }
+                />
+                <Tab.Screen name={settingsName} component={SettingsScreen}
+                    options={{
+                        headerShown: false,
+                    }
+                    }
+                />
+                <Tab.Screen name={profileName} component={ProfileScreen} options={{
+                    headerShown: false,
+                }
+                } />
             </Tab.Navigator>
         </NavigationContainer>
     );

@@ -12,7 +12,9 @@ const HomeScreen = ({navigation}) => {
     >
       <Text
       onPress={()=> alert('HomeScreen')}
-      >HomeScreen</Text>
+      >
+        HomeScreen
+        </Text>
     </View>
   )
 }
