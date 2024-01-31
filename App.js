@@ -4,14 +4,18 @@ import MainContainer from './navigation/MainContainer';
 
 export default function App() {
   return (
-    <MainContainer />
+    <View style={styles.container}>
+      <MainContainer />
+      <StatusBar style="auto" />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 3,
-    backgroundColor: '#b3e6ff',
+    // backgroundColor: '#b3e6',
+    backgroundColor:'#daefda'
     // alignItems: 'center',
     // justifyContent: 'center',
   },

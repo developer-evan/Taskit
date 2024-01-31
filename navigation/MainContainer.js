@@ -44,6 +44,7 @@ const MainContainer = () => {
                         fontSize: 10,
                         // fontWeight: 'bold',
                         paddingBottom: 10, // Corrected typo
+                        // marginTop: 60,
                     },
                     style: {
                         // backgroundColor: 'white',
@@ -53,6 +54,7 @@ const MainContainer = () => {
                         // height: 60,
                         padding: 10,
                         height: 70,
+                        
                     },
                 }}
             >
