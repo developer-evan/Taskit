@@ -73,7 +73,7 @@ const Tasks = () => {
         </TouchableOpacity>
       </View>
 
-      <ScrollView style={{ marginBottom: 60 }}>
+      <ScrollView style={{ marginBottom: 30 }}>
         <View style={styles.dataContainer}>
           {tasks.map((task) => (
             <View
